@@ -13,6 +13,7 @@ namespace MovieRentalAPI.Repositories
         Task<CustomResult<Book>> GetByIdAsync(int id);
         Task<CustomResult<Book>> AddAsync(Book book);
         Task<CustomResult<Book>> UpdateStatusAsync(int bookId, int newStatusId);
+        Task<CustomResult<bool>> DeleteAsync(int id);
     }
 
     public class BookRepository : IBookRepository
@@ -130,6 +131,29 @@ namespace MovieRentalAPI.Repositories
                     Success = false,
                     ErrorMessage = ex.Message
                 };
+            }
+        }
+        public async Task<CustomResult<bool>> DeleteAsync(int id)
+        {
+            try
+            {
+                var book = await _context.Books.FindAsync(id);
+                if (book == null)
+                {
+                    return new CustomResult<bool> { Success = false, ErrorMessage = "Failed to delete the book." };
+                }
+
+                _context.Books.Remove(book);
+                await _context.SaveChangesAsync();
+                return new CustomResult<bool>
+                {
+                    Success = true,
+                    Data = true
+                };
+            }
+            catch
+            {
+                return new CustomResult<bool> { Success = false, ErrorMessage = "Failed to delete the book." };
             }
         }
     }

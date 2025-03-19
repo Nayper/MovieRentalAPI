@@ -11,6 +11,7 @@ namespace MovieRentalAPI.Services
         Task<CustomResult<List<Book>>> GetSortedBooksAsync(string sortOrder, int pageNumber, int pageSize, bool isDesc);
         Task<CustomResult<Book>> AddBookAsync(Book book);
         Task<CustomResult<Book>> UpdateStatusAsync(int bookId, int newStatusId);
+        Task<CustomResult<bool>> DeleteBookAsync(int bookId);
     }
 
     public class BookService : IBookService
@@ -82,6 +83,17 @@ namespace MovieRentalAPI.Services
         {
             return await Task.FromResult(statusChangeMapping.TryGetValue(newStatusId, out var allowedStatuses) &&
                                           allowedStatuses.Contains(oldStatusId));
+        }
+
+        public async Task<CustomResult<bool>> DeleteBookAsync(int bookId)
+        {
+            var result = await _bookRepository.GetByIdAsync(bookId);
+            if (!result.Success)
+            {
+                return new CustomResult<bool> { Success = false, ErrorMessage = result.ErrorMessage };
+            }
+
+            return await _bookRepository.DeleteAsync(bookId);
         }
     }
 }
