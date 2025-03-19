@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|c:\\users\\piotr\\source\\repos\\movierentalapi\\movierentalapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|solutionrelative:movierentalapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|c:\\users\\piotr\\source\\repos\\movierentalapi\\movierentalapi\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|solutionrelative:movierentalapi\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|c:\\users\\piotr\\source\\repos\\movierentalapi\\movierentalapi\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|solutionrelative:movierentalapi\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|c:\\users\\piotr\\source\\repos\\movierentalapi\\movierentalapi\\repositories\\bookstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CB8F532-8353-4445-8B22-5031EE4ED3D3}|MovieRentalAPI\\MovieRentalAPI.csproj|solutionrelative:movierentalapi\\repositories\\bookstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "MovieRentalAPI\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "MovieRentalAPI\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAArwCsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T06:24:54.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "MovieRentalAPI\\Repositories\\BookRepository.cs",
+              "ToolTip": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Repositories\\BookRepository.cs",
+              "RelativeToolTip": "MovieRentalAPI\\Repositories\\BookRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T06:08:40.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Repositories\\BookStatusRepository.cs",
+              "RelativeDocumentMoniker": "MovieRentalAPI\\Repositories\\BookStatusRepository.cs",
+              "ToolTip": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Repositories\\BookStatusRepository.cs",
+              "RelativeToolTip": "MovieRentalAPI\\Repositories\\BookStatusRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T06:08:36.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "MovieRentalAPI\\Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\piotr\\source\\repos\\MovieRentalAPI\\MovieRentalAPI\\Services\\BookService.cs",
+              "RelativeToolTip": "MovieRentalAPI\\Services\\BookService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAswCYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T06:06:07.537Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
