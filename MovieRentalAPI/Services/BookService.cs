@@ -1,12 +1,14 @@
 ﻿using MovieRentalAPI.Common;
 using MovieRentalAPI.Models;
 using MovieRentalAPI.Repositories;
+using System;
 
 namespace MovieRentalAPI.Services
 {
     public interface IBookService
     {
         Task<CustomResult<List<Book>>> GetAllAsync();
+        Task<CustomResult<List<Book>>> GetSortedBooksAsync(string sortOrder, int pageNumber, int pageSize, bool isDesc);
         Task<CustomResult<Book>> AddBookAsync(Book book);
         Task<CustomResult<Book>> UpdateStatusAsync(int bookId, int newStatusId);
     }
@@ -30,6 +32,11 @@ namespace MovieRentalAPI.Services
         public async Task<CustomResult<List<Book>>> GetAllAsync()
         {
             return await _bookRepository.GetAllAsync();
+        }
+
+        public async Task<CustomResult<List<Book>>> GetSortedBooksAsync(string sortOrder, int pageNumber, int pageSize, bool isDesc)
+        {
+            return await _bookRepository.GetSortedBooksAsync(sortOrder, pageNumber, pageSize, isDesc);
         }
 
         public async Task<CustomResult<Book>> AddBookAsync(Book book)

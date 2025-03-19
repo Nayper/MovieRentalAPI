@@ -2,12 +2,14 @@
 using MovieRentalAPI.Common;
 using MovieRentalAPI.Data;
 using MovieRentalAPI.Models;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace MovieRentalAPI.Repositories
 {
     public interface IBookRepository
     {
         Task<CustomResult<List<Book>>> GetAllAsync();
+        Task<CustomResult<List<Book>>> GetSortedBooksAsync(string sortOrder, int pageNumber, int pageSize, bool isDesc);
         Task<CustomResult<Book>> GetByIdAsync(int id);
         Task<CustomResult<Book>> AddAsync(Book book);
         Task<CustomResult<Book>> UpdateStatusAsync(int bookId, int newStatusId);
@@ -28,6 +30,45 @@ namespace MovieRentalAPI.Repositories
             {
                 var books = await _context.Books.ToListAsync();
                 return new CustomResult<List<Book>> { Success = true, Data = books };
+            }
+            catch (ArgumentNullException ex)
+            {
+                return new CustomResult<List<Book>> { Success = false, ErrorMessage = ex.Message };
+            }
+        }
+
+        public async Task<CustomResult<List<Book>>> GetSortedBooksAsync(string sortOrder, int pageNumber, int pageSize, bool isDesc)
+        {
+            try
+            {
+                var booksQuery = _context.Books.AsQueryable();
+
+                // Sortowanie
+                switch (sortOrder)
+                {
+                    case "id":
+                        booksQuery = isDesc ? booksQuery.OrderByDescending(b => b.Id) : booksQuery.OrderBy(b => b.Id);
+                        break;
+                    case "title":
+                        booksQuery = isDesc ? booksQuery.OrderByDescending(b => b.Title) : booksQuery.OrderBy(b => b.Title);
+                        break;
+                    case "author":
+                        booksQuery = isDesc ? booksQuery.OrderByDescending(b => b.Author) : booksQuery.OrderBy(b => b.Author);
+                        break;
+                    case "ISBN":
+                        booksQuery = isDesc ? booksQuery.OrderByDescending(b => b.ISBN) : booksQuery.OrderBy(b => b.ISBN);
+                        break;
+                    default:
+                        booksQuery = isDesc ? booksQuery.OrderByDescending(b => b.Title) : booksQuery.OrderBy(b => b.Title);
+                        break;
+                }
+
+                var pagedBooks = await booksQuery
+                    .Skip((pageNumber - 1) * pageSize)
+                    .Take(pageSize)
+                .ToListAsync();
+
+                return new CustomResult<List<Book>> { Success = true, Data = pagedBooks };
             }
             catch (ArgumentNullException ex)
             {
