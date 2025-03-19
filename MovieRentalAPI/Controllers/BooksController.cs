@@ -66,5 +66,18 @@ namespace MovieRentalAPI.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBookAsync(int id)
+        {
+            var result = await _bookService.DeleteBookAsync(id);
+            if (!result.Success)
+            {
+                _logger.LogWarning($"Could not delete book ID {id}");
+                return BadRequest(result.ErrorMessage);
+            }
+
+            return Ok(result.Data);
+        }
     }
 }
